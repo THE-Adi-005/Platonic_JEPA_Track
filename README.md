@@ -55,12 +55,15 @@ Orthogonal Projector Head g_θ                    │
 ```
 Platonic_JEPA_Track/
 ├── AI_AGENT_CONTEXT_AND_INSTRUCTIONS.md  <-- CRITICAL: Read first if you are an AI assistant!
+├── STEP_BY_STEP_IMPLEMENTATION_GUIDE.md  <-- Complete implementation guide & execution directive
 ├── COMPANION_PROJECT_ECOSYSTEM.md        <-- Full guide to the companion Dataset Track & raw data
 ├── METHODOLOGY_BLUEPRINT.md              <-- Complete mathematical & scientific paper blueprint
 ├── README.md                             <-- This documentation
 ├── requirements.txt                      <-- Python dependencies
 ├── configs/
 │   └── config.yaml                       <-- Model architectures, loss weights, and dataset paths
+├── docs/
+│   └── PLATONIC_JEPA_ANALYSIS.md         <-- Deep analysis with 8 ranked novel framings
 ├── src/
 │   ├── __init__.py
 │   ├── models/
@@ -136,3 +139,4 @@ If you find this work or architecture useful, please cite:
 }
 ```
 *Grounded in the theoretical formulation of Randall Balestriero and Yann LeCun (2026), "Proving and Improving the Platonic Representation Hypothesis with JEPAs", arXiv:2610.39302.*
+

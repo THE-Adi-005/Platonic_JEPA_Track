@@ -49,3 +49,4 @@ training:
   weight_decay: 0.00001
   warmup_epochs: 2
   save_every: 5
+

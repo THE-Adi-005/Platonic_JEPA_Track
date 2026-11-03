@@ -137,3 +137,4 @@ def generate_synthetic_aligned_pair(
 
     Z_a = Z_a / np.linalg.norm(Z_a, axis=1, keepdims=True)
     return Z_v, Z_a
+

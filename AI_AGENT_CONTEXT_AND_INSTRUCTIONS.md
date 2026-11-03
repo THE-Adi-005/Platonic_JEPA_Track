@@ -28,6 +28,12 @@ Balestriero & LeCun (2026) proved mathematically that:
 - Replaces heavy autoregressive decoders with a **compact 35M parameter non-autoregressive JEPA**.
 - Enforces an orthogonal rotation between video representations (`DINOv2-small`, $d=384$) and structured attribute representations (`BGE-small` / Distil-JEPA, $d=384$) via **Orthogonal Procrustes / Stiefel Manifold parameterization**.
 - Uses a **calibrated rejection threshold $\tau_{\text{grounding}}$**: if an attribute is unobservable in the video pixels, the model outputs *"Not Observable"* rather than hallucinating a guess.
+- Implements **Factored Orthogonal JEPA (FO-JEPA)** to disentangle attributes across Stiefel manifold subspaces, and uses **Attribute Platonic Alignment Distance (APAD)** as a universal, cross-dataset hallucination diagnostic across 5 benchmarks.
+
+> [!TIP]
+> **Key Implementation Documents to Read:**
+> - `STEP_BY_STEP_IMPLEMENTATION_GUIDE.md`: Complete end-to-end implementation code patterns and execution checklist.
+> - `docs/PLATONIC_JEPA_ANALYSIS.md`: Complete research analysis detailing all 8 ranked novel framings, multi-seed statistical design, and compute budgets.
 
 ---
 
@@ -101,3 +107,4 @@ python -m src.metrics.apad --config configs/config.yaml
 - Be concise, direct, mathematically rigorous, and code-accurate.
 - Prioritize memory-efficient PyTorch implementations.
 - Always reference the connection to Balestriero & LeCun (2026) when explaining theoretical reasoning.
+

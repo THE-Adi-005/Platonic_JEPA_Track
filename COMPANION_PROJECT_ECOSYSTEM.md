@@ -90,3 +90,4 @@ flowchart LR
    - **PAG-JEPA model weights** (`outputs/models/pag_jepa_best.pt`, ~15 MB).
    - **APAD evaluation reports** quantifying how geometric alignment correlates with empirical verifiability rates.
    - Camera-ready figures showing that the Platonic Representation Theorem holds on real video.
+

@@ -84,3 +84,4 @@ def compute_stratified_apad(
             "top_5_singular_values": [float(x) for x in norm_s[:5]]
         }
     return results
+
