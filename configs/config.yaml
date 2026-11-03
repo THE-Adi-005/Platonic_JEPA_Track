@@ -1,0 +1,51 @@
+# Platonic Attribute Grounding JEPA (PAG-JEPA) Configuration
+project:
+  name: "platonic_attribute_grounding_jepa"
+  working_title: "Platonic Attribute Grounding: Proving and Exploiting Cross-Modal Alignment in Video Without Autoregressive Hallucination"
+  seed: 42
+
+hardware:
+  device: "cuda"
+  gpu_name: "NVIDIA GeForce RTX 4050 Laptop GPU"
+  max_vram_gb: 4.8
+  mixed_precision: true
+
+paths:
+  # Companion paths (fallback to local mocks if running standalone)
+  dataset_root: "../Dataset"
+  companion_outputs: "../Dataset_Track/outputs"
+  taxonomy_json: "../Dataset_Track/outputs/taxonomy.json"
+  verification_json: "../Dataset_Track/outputs/verification.json"
+  splits_dir: "../Dataset_Track/outputs/splits"
+  
+  # Local outputs
+  output_dir: "./outputs"
+  cache_dir: "./outputs/cache"
+  figures_dir: "./outputs/figures"
+  models_dir: "./outputs/models"
+
+model:
+  embed_dim: 384
+  vision_backbone: "dinov2_vits14"
+  text_backbone: "BAAI/bge-small-en-v1.5"
+  temporal_layers: 2
+  temporal_heads: 4
+  freeze_backbones: true
+  orthogonal_constraint: "procrustes_svd" # "procrustes_svd" or "stiefel"
+  grounding_threshold: 0.62 # tau_grounding for rejecting unobservable attributes
+
+loss:
+  type: "vicreg"
+  lambda_inv: 25.0
+  mu_var: 25.0
+  nu_cov: 1.0
+  variance_gamma: 1.0
+  epsilon: 0.0001
+
+training:
+  epochs: 20
+  batch_size: 64
+  learning_rate: 0.0003
+  weight_decay: 0.00001
+  warmup_epochs: 2
+  save_every: 5
